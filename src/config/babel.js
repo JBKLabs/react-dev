@@ -3,7 +3,7 @@ module.exports = (api) => {
   return {
     presets: [
       require.resolve('@babel/preset-env'),
-      require.resolve('@babel/preset-react'),
+      require.resolve('@babel/preset-react')
     ],
     plugins: [
       [
@@ -12,10 +12,10 @@ module.exports = (api) => {
           root: ['.'],
           alias: {
             '~': '.',
-            src: './src',
-          },
-        },
-      ],
-    ],
+            src: './src'
+          }
+        }
+      ]
+    ]
   };
 };

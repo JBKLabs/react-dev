@@ -1,4 +1,3 @@
-
 const escapeStringRegexp = require('escape-string-regexp');
 
 class InterpolateHtmlPlugin {
@@ -19,7 +18,7 @@ class InterpolateHtmlPlugin {
             // eslint-disable-next-line no-param-reassign
             data.html = data.html.replace(
               new RegExp(`%${escapeStringRegexp(key)}%`, 'g'),
-              value,
+              value
             );
           });
         });

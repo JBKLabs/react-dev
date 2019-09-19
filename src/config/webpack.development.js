@@ -21,21 +21,21 @@ module.exports = {
             loader: require.resolve('babel-loader'),
             options: {
               configFile: path.join(__dirname, './babel.js'),
-              presets: [require.resolve('babel-preset-react-app')],
-            },
-          },
-        ],
+              presets: [require.resolve('babel-preset-react-app')]
+            }
+          }
+        ]
       },
       {
         test: /\.css$/,
-        use: [require.resolve('style-loader'), require.resolve('css-loader')],
-      },
-    ],
+        use: [require.resolve('style-loader'), require.resolve('css-loader')]
+      }
+    ]
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
     publicPath: '/',
-    filename: 'static/js/bundle.js',
+    filename: 'static/js/bundle.js'
   },
   devServer: {
     historyApiFallback: true,
@@ -43,16 +43,16 @@ module.exports = {
     watchContentBase: true,
     port: 8080,
     publicPath: '/',
-    hot: true,
+    hot: true
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve(appDirectory, 'public/index.html'),
+      template: path.resolve(appDirectory, 'public/index.html')
     }),
     new InterpolateHtmlPlugin(HtmlWebpackPlugin, {
-      PUBLIC_URL: '',
-    }),
-  ],
+      PUBLIC_URL: ''
+    })
+  ]
 };

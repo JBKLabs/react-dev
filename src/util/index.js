@@ -5,7 +5,7 @@ const fs = require('fs');
 const readPkgUp = require('read-pkg-up');
 
 const { package: pkg, path: pkgPath } = readPkgUp.sync({
-  cwd: fs.realpathSync(process.cwd()),
+  cwd: fs.realpathSync(process.cwd())
 });
 const appDirectory = path.dirname(pkgPath);
 
@@ -21,6 +21,5 @@ const resolveBin = (moduleName, executable = moduleName) => {
 module.exports = {
   resolveBin,
   appDirectory,
-  pkg,
+  pkg
 };
-
