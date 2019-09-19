@@ -7,7 +7,8 @@ const { appDirectory } = require('../util');
 
 const config = webpackFactory('production');
 
-shell.rm('-rf', path.join(appDirectory, 'dist/*'));
+shell.rm('-rf', path.join(appDirectory, 'dist'));
+shell.mkdir('-p', path.join(appDirectory, 'dist'));
 shell.cp('-rf', path.join(appDirectory, 'public/*'), path.join(appDirectory, 'dist'));
 
 const compiler = webpack(config);
