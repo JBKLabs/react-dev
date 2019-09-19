@@ -16,5 +16,5 @@ compiler.run((err, stats) => {
     throw err;
   }
 
-  console.log(stats);
+  console.log('successfully built app to /dist');
 });
