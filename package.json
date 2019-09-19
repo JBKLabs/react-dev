@@ -12,7 +12,6 @@
     "npm": ">= 5"
   },
   "scripts": {
-    "prepare": "node src build",
     "lint": "node src lint"
   },
   "bin": {
@@ -50,7 +49,8 @@
     "style-loader": "0.23.1",
     "webpack": "4.35.2",
     "webpack-cli": "3.3.5",
-    "webpack-dev-server": "3.7.2"
+    "webpack-dev-server": "3.7.2",
+    "yargs-parser": "14.0.0"
   },
   "files": [
     "src"
