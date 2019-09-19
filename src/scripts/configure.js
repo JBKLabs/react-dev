@@ -3,7 +3,6 @@ const shell = require('shelljs');
 
 const { appDirectory } = require('../util');
 
-shell.set('+v');
 Object.entries(process.env)
   .filter(([key]) => key.substr(0, 4) === 'ENV_')
   .forEach(kvp => {
@@ -17,4 +16,3 @@ Object.entries(process.env)
       path.join(appDirectory, 'dist/env.js')
     );
   });
-shell.set('-v');
