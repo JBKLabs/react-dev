@@ -73,7 +73,6 @@ const webpackFactory = (mode) => {
       // eslint-disable-next-line camelcase
       child_process: 'empty'
     },
-    performance: true,
     devServer: {
       historyApiFallback: true,
       contentBase: path.join(appDirectory, 'public/'),
