@@ -24,6 +24,7 @@ const webpackFactory = (mode) => {
       extensions: ['.js', '.jsx']
     },
     output: {
+      path: isProduction ? path.resolve(appDirectory, 'dist') : undefined,
       publicPath: '/',
       filename: 'static/js/bundle.js'
     },
