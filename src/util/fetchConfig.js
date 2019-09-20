@@ -18,16 +18,18 @@ const babel = () => {
     '.babelrc',
     '.babelrc.js',
     '.babel.config.js'
-  ].forEach(f => {
-    if (projectHasFile(f)) {
+  ].forEach(token => {
+    if (projectHasFile(token)) {
       result = {
+        token,
         configurationExists: true,
-        path: buildPath(f)
+        path: buildPath(token)
       };
     }
   })
 
   return result || {
+    token: 'package.json',
     configurationExists: !!pkg.babel
   };
 };
