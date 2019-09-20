@@ -10,8 +10,6 @@ const InterpolateHtmlPlugin = require('../util/InterpolateHtmlWebpackPlugin');
 
 const babel = fetchConfig.babel();
 
-console.log(babel);
-
 const webpackFactory = (mode) => {
   const isProduction = mode === 'production';
   const isDevelopment = mode === 'development';
