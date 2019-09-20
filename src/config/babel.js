@@ -1,3 +1,14 @@
+const unformattedPlugins = {
+  'babel-plugin-module-resolver': {
+    path: require.resolve('babel-plugin-module-resolver'),
+    root: ['.'],
+    alias: {
+      '~': '.',
+      src: './src'
+    }
+  }
+}
+
 const defaults = {
   presets: [
     require.resolve('@babel/preset-env'),
@@ -5,14 +16,14 @@ const defaults = {
   ],
   plugins: {
     'babel-plugin-module-resolver': {
-      path: require.resolve('babel-plugin-module-resolver'),
-      settings: {
-        root: ['.'],
-        alias: {
-          '~': '.',
-          src: './src'
+      formatted: [
+        unformattedPlugins['babel-plugin-module-resolver'].path,
+        {
+          root: unformattedPlugins['babel-plugin-module-resolver'].root,
+          alias: unformattedPlugins['babel-plugin-module-resolver'].alias
         }
-      }
+      ],
+      opt: unformattedPlugins['babel-plugin-module-resolver']
     }
   }
 };
@@ -23,11 +34,8 @@ module.exports = (api) => {
   api.cache(true);
   return {
     presets: defaults.presets,
-    plugins: [
-      [
-        defaults.plugins['babel-plugin-module-resolver'].path,
-        { ...defaults.plugins['babel-plugin-module-resolver'].settings }
-      ]
-    ]
+    plugins: Object
+      .values(defaults.plugins)
+      .map(p => p.formatted),
   }
 };
