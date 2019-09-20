@@ -1,9 +1,10 @@
 const path = require('path');
+const chalk = require('chalk');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 
-const { appDirectory } = require('../util');
+const { appDirectory, log } = require('../util');
 const fetchConfig = require('../util/fetchConfig');
 const InterpolateHtmlPlugin = require('../util/InterpolateHtmlWebpackPlugin');
 
@@ -11,7 +12,7 @@ const InterpolateHtmlPlugin = require('../util/InterpolateHtmlWebpackPlugin');
 const babel = fetchConfig.babel();
 
 if (babel.configurationExists) {
-  console.log(`Babel override detected: ${babel.token}`);
+  log('Babel override detected: ' + chalk.cyan(babel.token));
 }
 
 const webpackFactory = (mode) => {
