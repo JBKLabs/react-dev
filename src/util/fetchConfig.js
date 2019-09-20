@@ -8,7 +8,11 @@ const { package: pkg } = readPkgUp.sync({
   cwd: fs.realpathSync(process.cwd()),
 });
 
-const buildPath = (...p) => path.join(appDirectory, ...p);
+const buildPath = (...p) => {
+  const builtPath = path.join(appDirectory, ...p);
+  console.log({ builtPath });
+  return builtPath;
+}
 const projectHasFile = (...p) => fs.existsSync(buildPath(...p));
 
 const babel = () => {
@@ -17,7 +21,9 @@ const babel = () => {
     '.babelrc.js',
     '.babel.config.js'
   ].forEach(f => {
-    if (projectHasFile(f)) {
+    const hasFile = projectHasFile(f)
+    console.log({ f, hasFile });
+    if (hasFile) {
       return {
         configurationExists: true,
         path: buildPath(f)
