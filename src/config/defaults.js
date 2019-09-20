@@ -24,7 +24,8 @@ const babel = {
         babelPlugins['babel-plugin-module-resolver'].path,
         { ...babelPlugins['babel-plugin-module-resolver'].options }
       ]
-    ]
+    ],
+    byName: babelPlugins
   }
 };
 
