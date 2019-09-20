@@ -10,6 +10,10 @@ const InterpolateHtmlPlugin = require('../util/InterpolateHtmlWebpackPlugin');
 
 const babel = fetchConfig.babel();
 
+if (babel.configurationExists) {
+  console.log(`Babel override detected: ${babel.token}`);
+}
+
 const webpackFactory = (mode) => {
   const isProduction = mode === 'production';
   const isDevelopment = mode === 'development';
