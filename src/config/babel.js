@@ -1,21 +1,33 @@
+const defaults = {
+  presets: [
+    require.resolve('@babel/preset-env'),
+    require.resolve('@babel/preset-react')
+  ],
+  plugins: {
+    'babel-plugin-module-resolver': {
+      path: require.resolve('babel-plugin-module-resolver'),
+      settings: {
+        root: ['.'],
+        alias: {
+          '~': '.',
+          src: './src'
+        }
+      }
+    }
+  }
+};
+
+module.exports.defaults = defaults;
+
 module.exports = (api) => {
   api.cache(true);
   return {
-    presets: [
-      require.resolve('@babel/preset-env'),
-      require.resolve('@babel/preset-react')
-    ],
+    presets: defaults.presets,
     plugins: [
       [
-        require.resolve('babel-plugin-module-resolver'),
-        {
-          root: ['.'],
-          alias: {
-            '~': '.',
-            src: './src'
-          }
-        }
+        defaults.plugins['babel-plugin-module-resolver'].path,
+        { ...defaults.plugins['babel-plugin-module-resolver'].settings }
       ]
     ]
-  };
+  }
 };
