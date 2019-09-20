@@ -16,6 +16,8 @@ const buildPath = (...p) => {
 const projectHasFile = (...p) => fs.existsSync(buildPath(...p));
 
 const babel = () => {
+  let result = null;
+
   [
     '.babelrc',
     '.babelrc.js',
@@ -24,14 +26,14 @@ const babel = () => {
     const hasFile = projectHasFile(f)
     console.log({ f, hasFile });
     if (hasFile) {
-      return {
+      result = {
         configurationExists: true,
         path: buildPath(f)
       };
     }
   })
 
-  return {
+  return result || {
     configurationExists: !!pkg.babel
   };
 };
