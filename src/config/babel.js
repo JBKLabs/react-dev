@@ -9,7 +9,7 @@ const unformattedPlugins = {
   }
 }
 
-const defaults = {
+const defaultConfig = {
   presets: [
     require.resolve('@babel/preset-env'),
     require.resolve('@babel/preset-react')
@@ -28,14 +28,14 @@ const defaults = {
   }
 };
 
-module.exports.defaults = defaults;
+module.exports.defaultConfig = defaultConfig;
 
 module.exports = (api) => {
   api.cache(true);
   return {
-    presets: defaults.presets,
+    presets: defaultConfig.presets,
     plugins: Object
-      .values(defaults.plugins)
+      .values(defaultConfig.plugins)
       .map(p => p.formatted),
   }
 };
