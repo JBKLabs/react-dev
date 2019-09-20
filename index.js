@@ -1,5 +1,3 @@
-const babel = require('./src/config/babel');
+const defaults = require('./src/config/defaults');
 
-module.exports = {
-  babel
-};
+module.exports = defaults;
