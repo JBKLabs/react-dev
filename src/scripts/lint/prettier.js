@@ -5,32 +5,24 @@ const parse = require('yargs-parser');
 const unparse = require('yargs-unparser');
 
 const fetchConfig = require('../../util/fetchConfig');
-const { resolveBin, log } = require('../../util');
+const { resolveBin, log, appDirectory } = require('../../util');
 
 let args = process.argv.slice(2);
 const parsedArgs = parse(args);
 
 const prettier = fetchConfig.prettier();
-let config = [
-  '--config',
-  path.join(__dirname, '../../config/prettier.yml')
-];
+let config = ['--config', path.join(__dirname, '../../config/prettier.yml')];
 
 if (parsedArgs.prettierConfig) {
-  config = [
-    '--config',
-    path.join(appDirectory, parsedArgs.prettierConfig)
-  ];
+  config = ['--config', path.join(appDirectory, parsedArgs.prettierConfig)];
 
   delete parsedArgs['prettier-config'];
   delete parsedArgs.prettierConfig;
   log(`Using provided prettier config path: ${config[1]}`);
 } else if (prettier.configurationExists) {
   config = prettier.path
-    ? [
-      '--config',
-      path.join(appDirectory, prettier.path)
-    ] : [];
+    ? ['--config', path.join(appDirectory, prettier.path)]
+    : [];
   log('Prettier override detected: ' + chalk.cyan(prettier.token));
 }
 
@@ -50,8 +42,12 @@ if (filesGiven) {
   );
 }
 
-const result = spawn.sync(resolveBin('prettier'), [...unparse(parsedArgs), ...config, ...output, ...filesToApply], {
-  stdio: 'inherit'
-});
+const result = spawn.sync(
+  resolveBin('prettier'),
+  [...unparse(parsedArgs), ...config, ...output, ...filesToApply],
+  {
+    stdio: 'inherit'
+  }
+);
 
 process.exit(result.status);

@@ -5,7 +5,7 @@ const { appDirectory } = require('../util');
 
 Object.entries(process.env)
   .filter(([key]) => key.substr(0, 4) === 'ENV_')
-  .forEach(kvp => {
+  .forEach((kvp) => {
     const key = kvp[0].substr(4);
     const value = kvp[1];
 

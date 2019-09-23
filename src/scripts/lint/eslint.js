@@ -11,26 +11,18 @@ let args = process.argv.slice(2);
 const parsedArgs = parse(args);
 
 const eslint = fetchConfig.eslint();
-let config = [
-  '--config',
-  path.join(__dirname, '../../config/eslintrc.yml')
-];
+let config = ['--config', path.join(__dirname, '../../config/eslintrc.yml')];
 
 if (parsedArgs.eslintConfig) {
-  config = [
-    '--config',
-    path.join(appDirectory, parsedArgs.eslintConfig)
-  ];
+  config = ['--config', path.join(appDirectory, parsedArgs.eslintConfig)];
 
   delete parsedArgs['eslint-config'];
   delete parsedArgs.eslintConfig;
   log(`Using provided eslint config path: ${config[1]}`);
 } else if (eslint.configurationExists) {
   config = eslint.path
-    ? [
-      '--config',
-      path.join(appDirectory, eslint.path)
-    ] : [];
+    ? ['--config', path.join(appDirectory, eslint.path)]
+    : [];
   log('Eslint override detected: ' + chalk.cyan(eslint.token));
 }
 
@@ -42,6 +34,10 @@ if (filesGiven) {
   );
 }
 
-spawn.sync(resolveBin('eslint'), [...unparse(parsedArgs), ...config, ...filesToApply], {
-  stdio: 'inherit'
-});
+spawn.sync(
+  resolveBin('eslint'),
+  [...unparse(parsedArgs), ...config, ...filesToApply],
+  {
+    stdio: 'inherit'
+  }
+);
