@@ -55,6 +55,9 @@
     "webpack-dev-server": "3.7.2",
     "yargs-parser": "14.0.0"
   },
+  "peerDependencies": {
+    "@jbknowledge/eslint-config": "^0.0.10"
+  },
   "files": [
     "src"
   ],
