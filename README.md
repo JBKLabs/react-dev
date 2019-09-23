@@ -2,6 +2,8 @@
 
 ## Installation
 
+This package has one required peer dependency: `@jbknowledge/eslint-config`.
+
 ```bash
 npm install @jbknowledge/eslint-config
 npm install @jbknowledge/react-dev
@@ -11,12 +13,11 @@ npm install @jbknowledge/react-dev
 ```json
 {
   "scripts": {
-    "lint": "jbk-scripts lint .",
-    "start": "jbk-scripts start"
+    "lint": "jbk-scripts lint",
+    "start": "jbk-scripts start",
+    "build": "jbk-scripts build",
+    "configure": "jbk-scripts configure"
   },
-  "eslintConfig": {
-    "extends": ["@jbknowledge"]
-  }
 }
 ```
 
