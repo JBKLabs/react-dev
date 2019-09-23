@@ -34,6 +34,30 @@ const babel = () => {
   };
 };
 
+const eslint = () => {
+  let result = null;
+
+  [
+    '.eslintrc',
+    '.eslintrc.json',
+    '.eslintrc.yml'
+  ].forEach(token => {
+    if (projectHasFile(token)) {
+      result = {
+        token,
+        configurationExists: true,
+        path: buildPath(token)
+      };
+    }
+  })
+
+  return result || {
+    token: 'package.json',
+    configurationExists: !!pkg.eslintConfig
+  };
+}
+
 module.exports = {
-  babel
+  babel,
+  eslint
 };

@@ -8,7 +8,6 @@ const { appDirectory, log } = require('../util');
 const fetchConfig = require('../util/fetchConfig');
 const InterpolateHtmlPlugin = require('../util/InterpolateHtmlWebpackPlugin');
 
-
 const babel = fetchConfig.babel();
 
 if (babel.configurationExists) {

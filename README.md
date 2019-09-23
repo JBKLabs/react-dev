@@ -24,7 +24,24 @@ npm install @jbknowledge/react-dev
 
 ### Eslint
 
-TODO
+In order of precedence, each of the following paths will override the eslint configuration provided by `@jbknowledge/react-dev`
+
+- `jbk-scripts lint --eslint-config <rootRelativePath>`
+- `.eslintrc`
+- `.eslintrc.json`
+- `.eslintrc.yml`
+- `package.json#eslintConfig`
+
+You can reference the [eslint user guide](https://eslint.org/docs/user-guide/configuring) for how to do so.
+
+If you want to extend the configuration provided by `@jbknowledge/react-dev` rather than replace it, extend `@jbknowledge` in your config file like the following:
+
+```yml
+extends:
+  - '@jbknowledge'
+rules:
+  ...
+```
 
 ### Prettier
 
