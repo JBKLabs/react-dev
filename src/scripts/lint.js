@@ -1,13 +1,14 @@
 const spawn = require('cross-spawn');
 const path = require('path');
 const chalk = require('chalk');
-const yargsParser = require('yargs-parser');
+const parse = require('yargs-parser');
+const unparse = require('yargs-unparser');
 
 const fetchConfig = require('../util/fetchConfig');
 const { resolveBin, appDirectory, log, removeArg } = require('../util');
 
 let args = process.argv.slice(2);
-const parsedArgs = yargsParser(args);
+const parsedArgs = parse(args);
 
 const eslint = fetchConfig.eslint();
 let config = [
@@ -21,11 +22,9 @@ if (parsedArgs['eslint-config']) {
     path.join(appDirectory, parsedArgs['eslint-config'])
   ];
 
-  console.log(args);
-
-  args = removeArg(args, 'eslint-config');
-
-  console.log(args);
+  console.log(parsedArgs);
+  delete parsedArgs['eslint-config'];
+  console.log(parsedArgs);
 
   log('Using provided eslint config path');
 } else if (eslint.configurationExists) {
@@ -45,7 +44,7 @@ if (filesGiven) {
   );
 }
 
-const result = spawn.sync(resolveBin('eslint'), [...args, ...config, ...filesToApply], {
+const result = spawn.sync(resolveBin('eslint'), [...unparse(parsedArgs), ...config, ...filesToApply], {
   stdio: 'inherit'
 });
 
