@@ -39,7 +39,7 @@ In order of precedence, each of the following paths will override the babel conf
 - `.babel.config.js`
 - `package.json#babel`
 
-You can use the [standard babel documentation](https://babeljs.io/docs/en/configuration) for how to do so.
+You can reference the [standard babel documentation](https://babeljs.io/docs/en/configuration) for how to do so.
 
 If you want to extend the configuration provided by `@jbknowledge/react-dev` rather than replace it, import `config.babel` from `@jbknowledge/react-dev` like the following:
 
