@@ -34,9 +34,13 @@ if (parsedArgs.prettierConfig) {
   log('Prettier override detected: ' + chalk.cyan(prettier.token));
 }
 
-const output = parsedArgs.c || parsedArgs.check || parsedArgs.l || parsedArgs.listDifferent || parsedArgs.write
-  ? []
-  : ['--check'];
+let output = ['--check'];
+
+if (parsedArgs.fix) {
+  output = ['--write'];
+
+  delete parsedArgs.fix;
+}
 
 const filesGiven = parsedArgs._.length > 0;
 const filesToApply = filesGiven ? [] : ['src/**/*.js'];
