@@ -20,9 +20,7 @@ if (parsedArgs.eslintConfig) {
   delete parsedArgs.eslintConfig;
   log(`Using provided eslint config path: ${config[1]}`);
 } else if (eslint.configurationExists) {
-  config = eslint.path
-    ? ['--config', eslint.path]
-    : [];
+  config = eslint.path ? ['--config', eslint.path] : [];
   log('Eslint override detected: ' + chalk.cyan(eslint.token));
 }
 
