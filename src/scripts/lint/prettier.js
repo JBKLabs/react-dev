@@ -13,7 +13,7 @@ const parsedArgs = parse(args);
 const prettier = fetchConfig.prettier();
 let config = [
   '--config',
-  path.join(__dirname, '../config/prettier.yml')
+  path.join(__dirname, '../../config/prettier.yml')
 ];
 
 if (parsedArgs.prettierConfig) {
