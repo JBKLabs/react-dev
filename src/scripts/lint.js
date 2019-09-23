@@ -24,7 +24,7 @@ if (parsedArgs.eslintConfig) {
 
   delete parsedArgs['eslint-config'];
   delete parsedArgs.eslintConfig;
-  log('Using provided eslint config path');
+  log(`Using provided eslint config path: ${config[1]}`);
 } else if (eslint.configurationExists) {
   config = eslint.path
     ? [
