@@ -5,5 +5,5 @@ module.exports = (api) => {
   return {
     presets: defaults.babel.presets.default,
     plugins: defaults.babel.plugins.default
-  }
+  };
 };
