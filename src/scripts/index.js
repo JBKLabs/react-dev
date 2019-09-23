@@ -4,26 +4,9 @@
 const path = require('path');
 const spawn = require('cross-spawn');
 
-const { log } = require('../util');
+const { log, handleSpawnResult } = require('../util');
 
 const [executor, , script, ...args] = process.argv;
-
-const handleSignal = (result) => {
-  if (result.signal === 'SIGKILL') {
-    console.log(
-      `The script "${script}" failed because the process exited too early. ` +
-      'This probably means the system ran out of memory or someone called ' +
-      '`kill -9` on the process.'
-    );
-  } else if (result.signal === 'SIGTERM') {
-    console.log(
-      `The script "${script}" failed because the process exited too early. ` +
-      'Someone might have called `kill` or `killall`, or the system could ' +
-      'be shutting down.'
-    );
-  }
-  process.exit(1);
-};
 
 if (script) {
   try {
@@ -34,11 +17,8 @@ if (script) {
       stdio: 'inherit'
     });
 
-    if (result.signal) {
-      handleSignal(result);
-    } else {
-      process.exit(result.status);
-    }
+    handleSpawnResult(result, script);
+    process.exit(result.status);
   } catch (error) {
     log(`unknown script "${script}"`);
   }
