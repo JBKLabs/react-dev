@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const yargsParser = require('yargs-parser');
 
 const fetchConfig = require('../util/fetchConfig');
-const { resolveBin, appDirectory, log } = require('../util');
+const { resolveBin, appDirectory, log, removeArg } = require('../util');
 
 let args = process.argv.slice(2);
 const parsedArgs = yargsParser(args);
@@ -20,6 +20,9 @@ if (parsedArgs['eslint-config']) {
     '--config',
     path.join(appDirectory, parsedArgs['eslint-config'])
   ];
+
+  args = removeArg(args, 'eslint-config');
+
   log('Using provided eslint config path');
 } else if (eslint.configurationExists) {
   config = eslint.path
