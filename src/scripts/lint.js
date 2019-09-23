@@ -22,10 +22,11 @@ if (parsedArgs['eslint-config']) {
   ];
   log('Using provided eslint config path');
 } else if (eslint.configurationExists) {
-  config = [
-    '--config',
-    path.join(appDirectory, eslint.path)
-  ];
+  config = eslint.path
+    ? [
+      '--config',
+      path.join(appDirectory, eslint.path)
+    ] : [];
   log('Eslint override detected: ' + chalk.cyan(eslint.token));
 }
 
