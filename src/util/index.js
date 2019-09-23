@@ -4,6 +4,8 @@ const path = require('path');
 const fs = require('fs');
 const readPkgUp = require('read-pkg-up');
 const chalk = require('chalk');
+const parse = require('yargs-parser');
+const unparse = require('yargs-unparser');
 
 const { package: pkg, path: pkgPath } = readPkgUp.sync({
   cwd: fs.realpathSync(process.cwd())
@@ -23,9 +25,15 @@ const log = (message) => {
   console.log(chalk.hex('#fa8072')('[jbk-scripts]: ') + message);
 };
 
+const removeArg = (args, toRemove) => {
+  const { [toRemove]: removed, ...remaining } = parse(args);
+  return unparse(remaining);
+}
+
 module.exports = {
   resolveBin,
   appDirectory,
   pkg,
-  log
+  log,
+  removeArg
 };
