@@ -5,7 +5,7 @@ const parse = require('yargs-parser');
 const unparse = require('yargs-unparser');
 
 const fetchConfig = require('../../util/fetchConfig');
-const { resolveBin, appDirectory, log, removeArg } = require('../../util');
+const { resolveBin, appDirectory, log } = require('../../util');
 
 let args = process.argv.slice(2);
 const parsedArgs = parse(args);
@@ -42,8 +42,6 @@ if (filesGiven) {
   );
 }
 
-const result = spawn.sync(resolveBin('eslint'), [...unparse(parsedArgs), ...config, ...filesToApply], {
+spawn.sync(resolveBin('eslint'), [...unparse(parsedArgs), ...config, ...filesToApply], {
   stdio: 'inherit'
 });
-
-process.exit(result.status);

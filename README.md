@@ -31,11 +31,12 @@ In order of precedence, each of the following paths will override the eslint con
 - `.eslintrc`
 - `.eslintrc.json`
 - `.eslintrc.yml`
+- `.eslintrc.yaml`
 - `package.json#eslintConfig`
 
 You can reference the [eslint user guide](https://eslint.org/docs/user-guide/configuring) for how to do so.
 
-If you want to extend the configuration provided by `@jbknowledge/react-dev` rather than replace it, extend `@jbknowledge` in your config file like the following:
+As a peer dependency, `@jbknowledge/eslint-config`, which `@jbknowledge/react-dev` uses implicitly, you are able to extend the existing eslint configuration like you would for any other project via `extends`. For example:
 
 ```yml
 extends:
@@ -44,9 +45,25 @@ rules:
   ...
 ```
 
+More information on extends can be found [here](https://eslint.org/docs/developer-guide/shareable-configs).
+
 ### Prettier
 
-TODO
+In order of precedence, each of the following paths will override the prettier configuration provided by `@jbknowledge/react-dev`
+
+- `jbk-scripts lint --prettier-config <rootRelativePath>`
+- `.prettierrc`
+- `.prettierrc.json`
+- `.prettierrc.yml`
+- `.prettierrc.yaml`
+- `.prettierrc.toml`
+- `.prettierrc.js`
+- `prettier.config.js`
+- `package.json#prettier`
+
+You can reference [prettier's options documentation](https://prettier.io/docs/en/options.html) for how to do so.
+
+Extension of prettier configuration is not supported at this time. If customization is desired, feel free to copy the contents of the [built in config](./src/config/prettier.yml).
 
 ### Babel
 
