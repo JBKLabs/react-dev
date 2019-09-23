@@ -22,11 +22,8 @@ if (parsedArgs.eslintConfig) {
     path.join(appDirectory, parsedArgs.eslintConfig)
   ];
 
-  console.log(parsedArgs);
   delete parsedArgs['eslint-config'];
   delete parsedArgs.eslintConfig;
-  console.log(parsedArgs);
-
   log('Using provided eslint config path');
 } else if (eslint.configurationExists) {
   config = eslint.path
