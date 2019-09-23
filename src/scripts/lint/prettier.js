@@ -21,7 +21,7 @@ if (parsedArgs.prettierConfig) {
   log(`Using provided prettier config path: ${config[1]}`);
 } else if (prettier.configurationExists) {
   config = prettier.path
-    ? ['--config', path.join(appDirectory, prettier.path)]
+    ? ['--config', prettier.path]
     : [];
   log('Prettier override detected: ' + chalk.cyan(prettier.token));
 }
