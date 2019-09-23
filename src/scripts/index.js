@@ -4,6 +4,8 @@
 const path = require('path');
 const spawn = require('cross-spawn');
 
+const { log } = require('../util');
+
 const [executor, , script, ...args] = process.argv;
 
 const handleSignal = (result) => {
@@ -38,7 +40,7 @@ if (script) {
       process.exit(result.status);
     }
   } catch (error) {
-    console.log(`unknown script "${script}"`);
+    log(`unknown script "${script}"`);
   }
 } else {
   console.log('please enter a command.');
