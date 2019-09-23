@@ -17,7 +17,7 @@ if (script) {
       stdio: 'inherit'
     });
 
-    handleSpawnResult(result);
+    handleSpawnResult(result, script);
     process.exit(result.status);
   } catch (error) {
     log(`unknown script "${script}"`);

@@ -11,13 +11,10 @@ const run = (token) => {
   const result = spawn.sync('node', [scriptPath, ...args], {
     stdio: 'inherit'
   });
-  handleSpawnResult(result);
+  handleSpawnResult(result, token);
   return result.status;
 };
 
-const failure = [
-  'eslint',
-  'prettier'
-].some(s => run(s) !== 0);
+const failure = ['eslint', 'prettier'].some((script) => run(script) !== 0);
 
 process.exit(failure ? 1 : 0);
