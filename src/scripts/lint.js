@@ -16,14 +16,15 @@ let config = [
   path.join(__dirname, '../config/eslintrc.yml')
 ];
 
-if (parsedArgs['eslint-config']) {
+if (parsedArgs.eslintConfig) {
   config = [
     '--config',
-    path.join(appDirectory, parsedArgs['eslint-config'])
+    path.join(appDirectory, parsedArgs.eslintConfig)
   ];
 
   console.log(parsedArgs);
   delete parsedArgs['eslint-config'];
+  delete parsedArgs.eslintConfig;
   console.log(parsedArgs);
 
   log('Using provided eslint config path');
