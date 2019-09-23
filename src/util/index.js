@@ -3,6 +3,7 @@
 const path = require('path');
 const fs = require('fs');
 const readPkgUp = require('read-pkg-up');
+const chalk = require('chalk');
 
 const { package: pkg, path: pkgPath } = readPkgUp.sync({
   cwd: fs.realpathSync(process.cwd())
@@ -18,8 +19,13 @@ const resolveBin = (moduleName, executable = moduleName) => {
   return fullPath;
 };
 
+const log = (message) => {
+  console.log(chalk.hex('#fa8072')('[jbk-scripts]: ') + message);
+};
+
 module.exports = {
   resolveBin,
   appDirectory,
-  pkg
+  pkg,
+  log
 };
