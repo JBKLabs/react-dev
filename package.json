@@ -12,10 +12,11 @@
     "npm": ">= 5"
   },
   "scripts": {
-    "lint": "node src lint"
+    "lint": "node src/scripts lint"
   },
+  "main": "index.js",
   "bin": {
-    "jbk-scripts": "src/index.js"
+    "jbk-scripts": "src/scripts/index.js"
   },
   "homepage": "https://github.com/JBKLabs/react-dev",
   "bugs": {
@@ -39,6 +40,7 @@
     "babel-plugin-module-resolver": "3.2.0",
     "babel-preset-react-app": "9.0.1",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
+    "chalk": "2.4.2",
     "cross-spawn": "7.0.0",
     "css-loader": "3.0.0",
     "escape-string-regexp": "2.0.0",

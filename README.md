@@ -22,6 +22,54 @@ npm install @jbknowledge/react-dev
 
 ## Overriding Configuration
 
+### Eslint
+
+TODO
+
+### Prettier
+
+TODO
+
+### Babel
+
+In order of precedence, each of the following paths will override the babel configuration provided by `@jbknowledge/react-dev`
+
+- `.babelrc`
+- `.babelrc.js`
+- `.babel.config.js`
+- `package.json#babel`
+
+You can reference the [standard babel documentation](https://babeljs.io/docs/en/configuration) for how to do so.
+
+If you want to extend the configuration provided by `@jbknowledge/react-dev` rather than replace it, import `config.babel` from `@jbknowledge/react-dev` like the following:
+
+```js
+const { babel } = require('@jbknowledge/react-dev');
+
+module.exports = {
+  presets: babel.presets.default,
+  // etc
+}
+```
+
+`config.babel` has the following schema at this time:
+
+```json
+{
+  "presets": {
+    "default": [...presets],
+  },
+  "plugins": {
+    "default": [...plugins],
+    "byName": {
+      [pluginName]: {...pluginSettings}
+    }
+  }
+}
+```
+
+### Webpack
+
 TODO
 
 ## Contributors
