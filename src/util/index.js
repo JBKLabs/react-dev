@@ -20,7 +20,7 @@ const resolveBin = (moduleName, executable = moduleName) => {
 };
 
 const log = (message) => {
-  console.log(chalk.keyword('salmon')('[jbk-scripts]: ') + message);
+  console.log(chalk.hex('#fa8072')('[jbk-scripts]: ') + message);
 };
 
 module.exports = {
