@@ -13,7 +13,7 @@ const parsedArgs = parse(args);
 const eslint = fetchConfig.eslint();
 let config = [
   '--config',
-  path.join(__dirname, '../config/eslintrc.yml')
+  path.join(__dirname, '../../config/eslintrc.yml')
 ];
 
 if (parsedArgs.eslintConfig) {
