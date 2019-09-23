@@ -36,7 +36,7 @@ In order of precedence, each of the following paths will override the eslint con
 
 You can reference the [eslint user guide](https://eslint.org/docs/user-guide/configuring) for how to do so.
 
-As a peer dependency, `@jbknowledge/eslint-config`, which `@jbknowledge/react-dev` uses implicitly, you are able to extend the existing eslint configuration like you would for any other project via `extends`. For example:
+`@jbknowledge/react-dev` uses `@jbknowledge/eslint-config` implicitly. You can extend this configuration like you would for any other project via `extends`. For example:
 
 ```yml
 extends:
