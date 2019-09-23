@@ -3,7 +3,7 @@ const shell = require('shelljs');
 const webpack = require('webpack');
 
 const webpackFactory = require('../config/webpackFactory');
-const { appDirectory } = require('../util');
+const { appDirectory, log } = require('../util');
 
 const config = webpackFactory('production');
 
@@ -17,5 +17,5 @@ compiler.run((err) => {
     throw err;
   }
 
-  console.log('successfully built app to /dist');
+  log('successfully built app to /dist');
 });
