@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
 
 - `lint` command now runs both `eslint` and `prettier` ([#16](https://github.com/JBKLabs/react-dev/issues/16))
+- default webpack configuration to alias `react` ([#20](https://github.com/JBKLabs/react-dev/issues/20))
 
 ## [0.0.1] - 2019-09-19
 ### Added

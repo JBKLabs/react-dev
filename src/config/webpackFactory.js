@@ -29,7 +29,10 @@ const webpackFactory = (mode) => {
     mode,
     entry: path.resolve(appDirectory, 'src/index.js'),
     resolve: {
-      extensions: ['.js', '.jsx']
+      extensions: ['.js', '.jsx'],
+      alias: {
+        react: require.resolve('react')
+      }
     },
     output: {
       path: isProduction ? path.resolve(appDirectory, 'dist') : undefined,
