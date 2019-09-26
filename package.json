@@ -1,7 +1,7 @@
 {
   "name": "@jbknowledge/react-dev",
-  "version": "0.0.1",
-  "description": "JBK React Standard Dev Dependency",
+  "version": "0.1.0",
+  "description": "JBKnowledge React Standard Dev Dependency",
   "keywords": [
     "jbknowledge",
     "react",
@@ -63,7 +63,7 @@
     "src"
   ],
   "devDependencies": {
-    "@jbknowledge/eslint-config": "0.0.8"
+    "@jbknowledge/eslint-config": "0.1.0"
   },
   "eslintConfig": {
     "extends": [
