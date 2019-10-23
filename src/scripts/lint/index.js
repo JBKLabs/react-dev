@@ -1,20 +1,23 @@
 const spawn = require('cross-spawn');
 const path = require('path');
 
-const { log, handleSpawnResult } = require('../../util');
+const { log, handleSpawnResult, find } = require('../../util');
 
-const args = process.argv.slice(2);
+const eslintConfig = find.eslint();
+log(`eslint: ${eslintConfig.token}`);
 
-const run = (token) => {
-  log(`Running ${token}`);
-  const scriptPath = path.join(__dirname, token);
-  const result = spawn.sync('node', [scriptPath, ...args], {
-    stdio: 'inherit'
-  });
-  handleSpawnResult(result, token);
-  return result.status;
-};
+// const args = process.argv.slice(2);
 
-const failure = ['eslint', 'prettier'].some((script) => run(script) !== 0);
+// const run = (token) => {
+//   log(`Running ${token}`);
+//   const scriptPath = path.join(__dirname, token);
+//   const result = spawn.sync('node', [scriptPath, ...args], {
+//     stdio: 'inherit'
+//   });
+//   handleSpawnResult(result, token);
+//   return result.status;
+// };
 
-process.exit(failure ? 1 : 0);
+// const failure = ['eslint', 'prettier'].some((script) => run(script) !== 0);
+
+// process.exit(failure ? 1 : 0);
