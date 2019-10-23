@@ -6,16 +6,16 @@ const { appDirectory, pkg } = require('./');
 const rootRelativePath = (...pathArgs) => path.join(appDirectory, ...pathArgs);
 const projectHasFile = (...pathArgs) => fs.existsSync(rootRelativePath(...pathArgs));
 
-const find = (defaultPath, pkgKey, paths) => () => {
-  const overridePath = paths.reduce((existingPath, token) => {
+const findConfig = (defaultPath, pkgKey, paths) => () => {
+  const overridePath = paths.reduce((existingPath, nextPath) => {
     if (existingPath !== null) {
       return existingPath;
     }
 
-    return projectHasFile(token)
+    return projectHasFile(nextPath)
       ? {
-        token,
-        path: rootRelativePath(token)
+        token: `using ${nextPath}`,
+        path: rootRelativePath(nextPath)
       } : null;
   }, null);
 
@@ -25,7 +25,7 @@ const find = (defaultPath, pkgKey, paths) => () => {
 
   return !!pkg[pkgKey]
     ? {
-      token: `package.json#${pkgKey}`,
+      token: `using package.json#${pkgKey}`,
       inPkg: true
     } : {
       token: 'no override detected',
@@ -33,7 +33,7 @@ const find = (defaultPath, pkgKey, paths) => () => {
     };
 }
 
-const eslint = find('eslint.config.js', 'eslintConfig', ['.eslintrc', '.eslintrc.json', '.eslintrc.yml', '.eslintrc.yaml']);
+const eslint = findConfig('eslint.config.js', 'eslintConfig', ['.eslintrc', '.eslintrc.json', '.eslintrc.yml', '.eslintrc.yaml']);
 
 module.exports = {
   eslint

@@ -42,13 +42,10 @@ const handleSpawnResult = (result, script) => {
   }
 };
 
-const find = require('./find');
-
 module.exports = {
   resolveBin,
   appDirectory,
   pkg,
   log,
-  handleSpawnResult,
-  find
+  handleSpawnResult
 };
