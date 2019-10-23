@@ -71,7 +71,7 @@ In order of precedence, each of the following paths will override the babel conf
 
 - `.babelrc`
 - `.babelrc.js`
-- `.babel.config.js`
+- `babel.config.js`
 - `package.json#babel`
 
 You can reference the [standard babel documentation](https://babeljs.io/docs/en/configuration) for how to do so.
