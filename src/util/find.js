@@ -6,7 +6,10 @@ const { appDirectory, pkg } = require('./');
 const rootRelativePath = (...pathArgs) => path.join(appDirectory, ...pathArgs);
 const projectHasFile = (...pathArgs) => fs.existsSync(rootRelativePath(...pathArgs));
 
-const findConfig = (defaultPath, pkgKey, paths) => () => {
+const modPath = require.resolve('@jbknowledge/react-dev');
+console.log({ modPath });
+
+const findConfig = (name, defaultPath, pkgKey, paths) => () => {
   const overridePath = paths.reduce((existingPath, nextPath) => {
     if (existingPath !== null) {
       return existingPath;
@@ -14,7 +17,7 @@ const findConfig = (defaultPath, pkgKey, paths) => () => {
 
     return projectHasFile(nextPath)
       ? {
-        token: `using ${nextPath}`,
+        msg: `found ${name} override (${nextPath})`,
         path: rootRelativePath(nextPath)
       } : null;
   }, null);
@@ -25,16 +28,28 @@ const findConfig = (defaultPath, pkgKey, paths) => () => {
 
   return !!pkg[pkgKey]
     ? {
-      token: `using package.json#${pkgKey}`,
-      inPkg: true
+      msg: `found ${name} override (package.json#${pkgKey})`
     } : {
-      token: 'no override detected',
+      msg: `no ${name} override detected`,
       path: require.resolve(`@jbknowledge/react-dev/src/config/${defaultPath}`)
     };
 }
 
-const eslint = findConfig('eslint.config.js', 'eslintConfig', ['.eslintrc', '.eslintrc.json', '.eslintrc.yml', '.eslintrc.yaml']);
+const eslintConfig = findConfig(
+  'eslint config',
+  'eslint.config.js',
+  'eslintConfig',
+  ['.eslintrc', '.eslintrc.json', '.eslintrc.yml', '.eslintrc.yaml']
+);
+
+const eslintIgnore = findConfig(
+  'eslint ignore',
+  '.eslintignore',
+  null,
+  ['.eslintignore']
+);
 
 module.exports = {
-  eslint
+  eslintConfig,
+  eslintIgnore
 };

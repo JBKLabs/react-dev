@@ -20,8 +20,11 @@ const resolveBin = (moduleName, executable = moduleName) => {
   return fullPath;
 };
 
-const log = (message) => {
-  console.log(chalk.hex('#fa8072')('[jbk-scripts]: ') + message);
+const log = (message, prefix = chalk.hex('#fa8072')('[jbk-scripts]: ')) => {
+  console.log(prefix + message);
+  return {
+    then: m => log(m, chalk.hex('#444444')('[*]: '))
+  };
 };
 
 const handleSpawnResult = (result, script) => {

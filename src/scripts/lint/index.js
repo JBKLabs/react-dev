@@ -1,11 +1,29 @@
 const spawn = require('cross-spawn');
 const path = require('path');
+const parse = require('yargs-parser');
 
-const { log, handleSpawnResult } = require('../../util');
+const { log, resolveBin } = require('../../util');
 const find = require('../../util/find');
 
-const eslintConfig = find.eslint();
-log(`eslint: ${eslintConfig.token}`);
+const eslintConfig = find.eslintConfig();
+const eslintIgnore = find.eslintIgnore();
+log('running eslint...')
+  .then(eslintConfig.msg)
+  .then(eslintIgnore.msg);
+
+const config = eslintConfig.path ? ['--config', eslintConfig.path] : [];
+const ignore = ['--ignore-path', eslintIgnore.path];
+const files = parse(process.argv.slice(2))._;
+
+console.log({ config, ignore, files });
+
+spawn.sync(
+  resolveBin('eslint'),
+  [...config, ...ignore, ...files],
+  {
+    stdio: 'inherit'
+  }
+);
 
 // const args = process.argv.slice(2);
 
