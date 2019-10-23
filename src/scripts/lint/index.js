@@ -1,7 +1,8 @@
 const spawn = require('cross-spawn');
 const path = require('path');
 
-const { log, handleSpawnResult, find } = require('../../util');
+const { log, handleSpawnResult } = require('../../util');
+const find = require('../../util/find');
 
 const eslintConfig = find.eslint();
 log(`eslint: ${eslintConfig.token}`);
