@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "jbk-scripts start",
-    "lint": "jbk-scripts lint src",
+    "lint": "jbk-scripts lint src/**",
     "build": "jbk-scripts build",
     "configure": "jbk-scripts configure",
     "eject": "jbk-scripts eject"
