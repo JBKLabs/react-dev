@@ -11,7 +11,8 @@
     "eject": "jbk-scripts eject"
   },
   "devDependencies": {
-    "@jbknowledge/react-dev": "^0.1.0"
+    "@jbknowledge/react-dev": "^0.1.0",
+    "prettier": "1.18.2"
   },
   "dependencies": {
     "@babel/polyfill": "7.6.0",
