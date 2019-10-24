@@ -12,7 +12,7 @@
     "npm": ">= 5"
   },
   "scripts": {
-    "lint": "node src/scripts lint"
+    "lint": "node src/scripts lint **/*.js"
   },
   "main": "index.js",
   "bin": {
