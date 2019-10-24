@@ -1,7 +1,12 @@
 {
   "private": true,
-  "workspaces": [
-    "lib",
-    "example"
-  ]
+  "workspaces": {
+    "packages": [
+      "lib",
+      "example"
+    ],
+    "nohoist": [
+      "**"
+    ]
+  }
 }
