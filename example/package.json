@@ -2,7 +2,7 @@
   "name": "example",
   "version": "0.1.0",
   "private": true,
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "jbk-scripts start",
     "lint": "jbk-scripts lint src/**",

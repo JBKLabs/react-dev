@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import AddUser from './AddUser';
-import UserList from './UserList';
+import AddUser from "./AddUser";
+import UserList from "./UserList";
 
 const Users = () => (
   <div>
