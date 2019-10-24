@@ -11,12 +11,10 @@
     "eject": "jbk-scripts eject"
   },
   "devDependencies": {
-    "@jbknowledge/eslint-config": "^0.1.0",
-    "@jbknowledge/react-dev": "0.1.0"
+    "@jbknowledge/react-dev": "^0.1.0"
   },
   "dependencies": {
     "@babel/polyfill": "7.6.0",
-    "@jbknowledge/react-dev": "0.1.0",
     "@jbknowledge/react-form": "0.2.0",
     "@rematch/core": "1.2.0",
     "moment": "2.24.0",
