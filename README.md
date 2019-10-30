@@ -73,6 +73,8 @@ configure will inject `ENV_*` into your `public/env.js` file for releases.
 
 eject allows you to manage your configuration yourself. This will both eject the config and install the relevant dev dependencies by default.
 
+*Note*: If you eject configuration, you will want to periodically re-eject to catch internal configuration updates of `react-dev`. Just make sure you retain any modifications you make.
+
 **options**:
 * `--config-only`
   * By default, running eject for a provider will also eject control of the dev dependencies for that provider. For example, if you eject `prettier` it will also install `prettier` the package as a dev dependency. The `--config-only` flag will skip this step only copying out the config files themselves. This will allow you to extend `react-dev`'s configuration without managing the associated dev dependencies; future executions of related `jbk-scripts` commands will utilize your ejected config with the dev dependencies that `react-dev` retains control over.
