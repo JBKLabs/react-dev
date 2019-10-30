@@ -1,6 +1,6 @@
 ## Developing Locally
 
-* `install yarn`
+* `npm i -g yarn`
 * at root, run `yarn install`
 * cd into `example`
 
