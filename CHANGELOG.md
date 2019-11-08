@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - problem where project docs/license/etc are not included in the published package ([#33](https://github.com/JBKLabs/react-dev/issues/33))
+- `configure`'s internal reliance on `package.json` file which may or may not exist in runtime environment ([#35](https://github.com/JBKLabs/react-dev/issues/35))
 
 ## [0.3.0] - 2019-11-08
 ### Added
