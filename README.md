@@ -61,11 +61,19 @@ available overrides:
 - webpack config
 - babel config
 
+**options**
+* `--build-path <projectRootRelativePath>`
+  * By default, `jbk-scripts` builds to `./dist`. If you need to change this path, i.e. to `./build`, you can do so using this option.
+
 ### **configure**
 
 `jbk-scripts configure`
 
-configure will inject `ENV_*` into your `public/env.js` file for releases.
+configure will inject `ENV_*` into your `<build>/env.js` file for releases.
+
+**options**
+* `--build-path <projectRootRelativePath>`
+  * By default, `jbk-scripts` assumes you built to `dist` and looks for an `env.js` file at that location. If your build location is different, i.e. `./build`, you can declare that using this option.
 
 ### **eject**
 
