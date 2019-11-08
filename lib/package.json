@@ -12,7 +12,9 @@
     "npm": ">= 5"
   },
   "scripts": {
-    "lint": "node src/scripts lint **/*.js"
+    "lint": "node src/scripts lint **/*.js",
+    "prepublish": "copyfiles ../CHANGELOG.md ../README.md ../LICENSE ./lib",
+    "postpublish": "rimraf CHANGELOG.md README.md LICENSE"
   },
   "main": "index.js",
   "bin": {
@@ -70,5 +72,8 @@
     "semi": true,
     "tabWidth": 2,
     "arrowParens": "always"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.1.1"
   }
 }
