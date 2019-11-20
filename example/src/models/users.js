@@ -1,4 +1,4 @@
-import uuid from "uuid/v1";
+import uuid from 'uuid/v1';
 
 export default {
   state: [],
@@ -12,9 +12,9 @@ export default {
       }
     ]
   },
-  effects: dispatch => ({
+  effects: (dispatch) => ({
     async addUserAsync(user) {
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       dispatch.users.add(user);
     }
   })

@@ -1,6 +1,6 @@
-import { init } from "@rematch/core";
+import { init } from '@rematch/core';
 
-import models from "../models";
+import models from '../models';
 
 const store = init({ models });
 
