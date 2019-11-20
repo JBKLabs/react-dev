@@ -23,6 +23,10 @@ npm install @jbknowledge/react-dev
 
 `@jbknowledge/react-dev` provides a handful of scripts for your development environment.
 
+**Environment**:
+
+All scripts are configured to read a `.env` file for configuration. Further documentation for what environment variables options are available can be seen below.
+
 ### **lint**
 
 `jbk-scripts lint [options] <paths>`
@@ -51,6 +55,9 @@ available overrides:
 - webpack config
 - babel config
 
+`.env` options:
+- each of `ENV_<key>` will replace the value of `window.env.<key>` if it exists
+
 ### **build**
 
 `jbk-scripts build`
@@ -74,6 +81,9 @@ configure will inject `ENV_*` into your `<build>/env.js` file for releases.
 **options**
 * `--build-path <projectRootRelativePath>`
   * By default, `jbk-scripts` assumes you built to `dist` and looks for an `env.js` file at that location. If your build location is different, i.e. `./build`, you can declare that using this option.
+
+`.env` options:
+- each of `ENV_<key>` will replace the value of `window.env.<key>` if it exists
 
 ### **eject**
 
