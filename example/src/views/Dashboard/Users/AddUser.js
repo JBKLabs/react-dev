@@ -1,9 +1,9 @@
-import React from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { Form } from "@jbknowledge/react-form";
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { Form } from '@jbknowledge/react-form';
 
-import { Input, Button } from "src/common";
+import { Input, Button } from 'src/common';
 
 const AddUser = ({ addUserAsync }) => (
   <Form
