@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - ability to override values in `env.js` for local development ([#38](https://github.com/JBKLabs/react-dev/issues/38))
 
+### Fixed
+- babel override now correctly looks for `babel.config.js` instead of `.babel.config.js` ([#23](https://github.com/JBKLabs/react-dev/issues/23))
+
 ### Updated
 - all scripts to utilize `.env` files ([#38](https://github.com/JBKLabs/react-dev/issues/38))
 
