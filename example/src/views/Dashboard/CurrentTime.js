@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import moment from "moment";
+import React, { useState, useEffect } from 'react';
+import moment from 'moment';
 
 const CurrentTime = () => {
   const [time, setTime] = useState(moment());
@@ -13,9 +13,9 @@ const CurrentTime = () => {
   });
 
   return (
-    <div style={{ width: "100%" }}>
+    <div style={{ width: '100%' }}>
       <h2>Current time</h2>
-      {time.format("dddd, MMMM Do YYYY, h:mm:ss.SSS a")}
+      {time.format('dddd, MMMM Do YYYY, h:mm:ss.SSS a')}
     </div>
   );
 };

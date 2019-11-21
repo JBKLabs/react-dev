@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
-import { ValidationError, withFormHandling } from "@jbknowledge/react-form";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { ValidationError, withFormHandling } from '@jbknowledge/react-form';
 
 const Input = ({ value, setValue, error, label }) => {
   const [blurred, setBlurred] = useState(false);
@@ -11,9 +11,9 @@ const Input = ({ value, setValue, error, label }) => {
       <Label>{label}</Label>
       <TextInput
         value={value}
-        onChange={e => setValue(e.target.value)}
+        onChange={(e) => setValue(e.target.value)}
         onBlur={() => setBlurred(true)}
-        className={error && blurred ? "error" : ""}
+        className={error && blurred ? 'error' : ''}
       />
       {error && blurred && <Error>{error}</Error>}
     </Container>

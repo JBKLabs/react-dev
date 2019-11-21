@@ -4,6 +4,25 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+### Added
+- ability to override values in `env.js` for local development ([#38](https://github.com/JBKLabs/react-dev/issues/38))
+
+### Updated
+- all scripts to utilize `.env` files ([#38](https://github.com/JBKLabs/react-dev/issues/38))
+
+## [0.3.1] - 2019-11-08
+### Fixed
+- problem where project docs/license/etc are not included in the published package ([#33](https://github.com/JBKLabs/react-dev/issues/33))
+- `configure`'s internal reliance on `package.json` file which may or may not exist in runtime environment ([#35](https://github.com/JBKLabs/react-dev/issues/35))
+
+## [0.3.0] - 2019-11-08
+### Added
+- `--build-path` option to both `build` and `configure` to support existing project's requirements ([#31](https://github.com/JBKLabs/react-dev/issues/31))
+
+### Updated
+- webpack config to utilize a `BUILD_PATH` environment variable for build output which is set by `build` automatically ([#31](https://github.com/JBKLabs/react-dev/issues/31))
+
 ## [0.2.0] - 2019-10-30
 ### Added
 - `eject` script to individually eject one or more of `eslint`, `prettier`, `babel`, and/or `webpack` ([#25](https://github.com/JBKLabs/react-dev/issues/25))
