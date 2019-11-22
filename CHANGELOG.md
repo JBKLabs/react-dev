@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Updated
+
+- `configure` logs which keys are replaced in `env.js` ([#34](https://github.com/JBKLabs/react-dev/issues/34))
+
+## [0.4.0] - 2019-11-21
+
 ### Added
 
 - ability to override values in `env.js` for local development ([#38](https://github.com/JBKLabs/react-dev/issues/38))
@@ -18,7 +24,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
 
 - all scripts to utilize `.env` files ([#38](https://github.com/JBKLabs/react-dev/issues/38))
-- `configure` logs which keys are replaced in `env.js` ([#34](https://github.com/JBKLabs/react-dev/issues/34))
 
 ## [0.3.1] - 2019-11-08
 
