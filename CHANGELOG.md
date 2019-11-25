@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
 
 - `configure` logs which keys are replaced in `env.js` ([#34](https://github.com/JBKLabs/react-dev/issues/34))
+- `eject` to prompt user before replacing config files which already exist ([#28](https://github.com/JBKLabs/react-dev/issues/28))
 
 ## [0.4.0] - 2019-11-21
 
