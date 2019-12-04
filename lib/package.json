@@ -12,7 +12,7 @@
     "npm": ">= 5"
   },
   "scripts": {
-    "lint": "node src/scripts lint **/*.js",
+    "lint": "node src/scripts lint '**/*.js'",
     "prepublishOnly": "copyfiles ../CHANGELOG.md ../README.md ../LICENSE ./lib",
     "postpublish": "rimraf CHANGELOG.md README.md LICENSE"
   },
