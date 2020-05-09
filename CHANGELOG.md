@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## Unreleased
+
+### Added
+
+- `start` and `build` both allow you to specify the entry point using optional arg `--entry-point` ([#52](https://github.com/JBKLabs/react-dev/issues/52))
+
+### Updated
+
+- `start` and `build` no longer require `package.json#main` to be defined defaulting to "src/index.js" when undefined ([#52](https://github.com/JBKLabs/react-dev/issues/52))
+
+
 ## [0.5.0] - 2020-05-01
 
 ### Updated
