@@ -1,6 +1,6 @@
 {
   "name": "@jbknowledge/react-dev",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "JBKnowledge React Standard Dev Dependency",
   "keywords": [
     "jbknowledge",
@@ -12,7 +12,7 @@
     "npm": ">= 5"
   },
   "scripts": {
-    "lint": "node src/scripts lint **/*.js",
+    "lint": "node src/scripts lint '**/*.js'",
     "prepublishOnly": "copyfiles ../CHANGELOG.md ../README.md ../LICENSE ./lib",
     "postpublish": "rimraf CHANGELOG.md README.md LICENSE"
   },

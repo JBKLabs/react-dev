@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "jbk-scripts start",
-    "lint": "jbk-scripts lint src/**",
+    "lint": "jbk-scripts lint 'src/**'",
     "build": "jbk-scripts build",
     "configure": "jbk-scripts configure",
     "eject": "jbk-scripts eject"
@@ -26,5 +26,10 @@
     "react-router-dom": "5.0.1",
     "styled-components": "4.3.2",
     "uuid": "3.3.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@jbknowledge"
+    ]
   }
 }

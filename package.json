@@ -8,5 +8,8 @@
     "nohoist": [
       "**"
     ]
+  },
+  "scripts": {
+    "lint": "yarn workspaces run lint"
   }
 }
