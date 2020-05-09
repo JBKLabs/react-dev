@@ -1,4 +1,15 @@
 {
   "files.eol": "\n",
-  "git.fetchOnPull": true
+  "git.fetchOnPull": true,
+  "eslint.run": "onSave",
+  "eslint.workingDirectories": [
+    {
+      "directory": "lib",
+      "changeProcessCWD": true
+    },
+    {
+      "directory": "example",
+      "changeProcessCWD": true
+    }
+  ]
 }

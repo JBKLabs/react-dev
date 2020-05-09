@@ -6,6 +6,7 @@ import '@babel/polyfill';
 
 import store from './lib/store';
 import App from './App';
+import './styles/index.scss';
 
 ReactDOM.render(
   <Provider store={store}>
