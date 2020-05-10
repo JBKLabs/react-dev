@@ -9,10 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- first party support for `sass` ([#41](https://github.com/JBKLabs/react-dev/issues/41))
+- `start` and `build` both allow you to specify the entry point using optional arg `--entry-point` ([#52](https://github.com/JBKLabs/react-dev/issues/52))
 
 ### Updated
 
+- `start` and `build` no longer require `package.json#main` to be defined defaulting to "src/index.js" when undefined ([#52](https://github.com/JBKLabs/react-dev/issues/52))
+- first party support for `sass` ([#41](https://github.com/JBKLabs/react-dev/issues/41))
 - migrate webpack dev server off of deprecated `setup` ([#42](https://github.com/JBKLabs/react-dev/issues/42))
 
 ### Security

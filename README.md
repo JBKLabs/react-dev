@@ -49,7 +49,15 @@ available overrides:
 
 `jbk-scripts start`
 
-start will spin up a webpack dev server on your behalf.
+start will spin up a webpack dev server on your behalf pointing to your entry point with the following precedence:
+
+* `--entry-point` optional option
+* `package.json#main`
+* src/index.js
+
+
+options:
+* `--entry-point`: Change entrypoint js path. i.e. `./packages/client/index.js`
 
 available overrides:
 - webpack config
@@ -62,7 +70,14 @@ available overrides:
 
 `jbk-scripts build`
 
-build will generate a production bundle of your site and output to `dist/*`.
+build will generate a production bundle of your site and output to `dist/*` using the entry point you define with the following precedence:
+
+* `--entry-point` optional option
+* `package.json#main`
+* src/index.js
+
+options:
+* `--entry-point`: Change entrypoint js path. i.e. `./packages/client/index.js`
 
 available overrides:
 - webpack config
