@@ -12,8 +12,8 @@
     "npm": ">= 5"
   },
   "scripts": {
-    "lint": "node src/scripts lint **/*.js",
-    "prepublish": "copyfiles ../CHANGELOG.md ../README.md ../LICENSE ./lib",
+    "lint": "node src/scripts lint '**/*.js'",
+    "prepublishOnly": "copyfiles ../CHANGELOG.md ../README.md ../LICENSE ./lib",
     "postpublish": "rimraf CHANGELOG.md README.md LICENSE"
   },
   "main": "index.js",
@@ -54,6 +54,8 @@
     "prettier": "1.18.2",
     "read-pkg-up": "6.0.0",
     "rimraf": "3.0.0",
+    "sass": "^1.26.5",
+    "sass-loader": "8.0.0",
     "shelljs": "0.8.3",
     "style-loader": "0.23.1",
     "webpack": "4.35.2",

@@ -14,7 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
 
 - `start` and `build` no longer require `package.json#main` to be defined defaulting to "src/index.js" when undefined ([#52](https://github.com/JBKLabs/react-dev/issues/52))
+- first party support for `sass` ([#41](https://github.com/JBKLabs/react-dev/issues/41))
+- migrate webpack dev server off of deprecated `setup` ([#42](https://github.com/JBKLabs/react-dev/issues/42))
 
+### Security
+
+- `acorn@6.3.0` --> `acorn@6.4.1` ([#48](https://github.com/JBKLabs/react-dev/pull/48))
 
 ## [0.5.0] - 2020-05-01
 
