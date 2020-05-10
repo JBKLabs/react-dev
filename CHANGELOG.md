@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - first party support for `sass` ([#41](https://github.com/JBKLabs/react-dev/issues/41))
 
+### Updated
+
+- migrate webpack dev server off of deprecated `setup` ([#42](https://github.com/JBKLabs/react-dev/issues/42))
+
 ## [0.5.0] - 2020-05-01
 
 ### Updated
