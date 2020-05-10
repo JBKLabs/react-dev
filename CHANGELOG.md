@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - migrate webpack dev server off of deprecated `setup` ([#42](https://github.com/JBKLabs/react-dev/issues/42))
 
+### Security
+
+- `acorn@6.3.0` --> `acorn@6.4.1` ([#48](https://github.com/JBKLabs/react-dev/pull/48))
+
 ## [0.5.0] - 2020-05-01
 
 ### Updated
