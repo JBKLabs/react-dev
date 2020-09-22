@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Security
 
+- `elliptic@6.5.1` --> `elliptic@6.5.3` ([#56](https://github.com/JBKLabs/react-dev/pull/56))
 - `websocket-extensions@0.1.3` --> `websocket-extensions@0.1.4` ([#54](https://github.com/JBKLabs/react-dev/pull/54))
 
 ## [0.6.0] - 2020-05-09
