@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Fixed
+
+- environment variable pass-through through main cli router ([#61](https://github.com/JBKLabs/react-dev/issues/61))
+
 ### Security
 
 - `websocket-extensions@0.1.3` --> `websocket-extensions@0.1.4` ([#54](https://github.com/JBKLabs/react-dev/pull/54))
